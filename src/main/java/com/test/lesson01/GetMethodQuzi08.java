@@ -42,7 +42,14 @@ public class GetMethodQuzi08 extends HttpServlet {
 			String line = iter.next();
 			//System.out.println(line);
 			if (line.contains(search)) {
-				out.print(line + "<br>");
+				
+				// 1. 방식) - 맛집글자 굵게
+//				line = line.replace(search, "<b>" + search + "</b>");
+//				out.print(line + "<br>");
+				
+				// 2. 방식) - 맛집글자 굵게
+				String[] words = line.split(search);
+				out.print(words[0] + "<b>" + search + "</b>" + words[1] + "<br>");
 			}
 		}
 		out.print("</body></html>");

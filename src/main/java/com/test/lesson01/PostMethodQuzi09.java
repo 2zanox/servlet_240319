@@ -24,8 +24,10 @@ public class PostMethodQuzi09 extends HttpServlet {
 		
 		// 출력
 		PrintWriter out = response.getWriter();
-		out.print("<html><head><title>입사 지원서</title></head><body>");
-		
+		out.print("<html><head><title>입사지원서</title></head><body>");
+		out.print("<b>" + name + "</b>님 지원이 완료 되었습니다.<br>");
+		out.print("<h3>지원 내용</h3>");
+		out.print(introduce);
 		out.print("</body></html>");
 	}
 }
