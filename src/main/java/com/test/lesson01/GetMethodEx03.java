@@ -15,6 +15,7 @@ public class GetMethodEx03 extends HttpServlet {
 	public void doGet(HttpServletRequest request
 			, HttpServletResponse response) throws IOException {
 		
+		// stash 테스트용 주석 추가
 		// 테스트용 주석 추가
 		
 		response.setCharacterEncoding("utf-8");
