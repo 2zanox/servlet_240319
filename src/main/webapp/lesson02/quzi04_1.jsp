@@ -13,10 +13,13 @@
 	<%	
 		// request parameter
 		int number = Integer.valueOf(request.getParameter("number"));
-		String[] lenght = request.getParameterValues("lenght");
+		String[] lenghtArr = request.getParameterValues("lenght");
 		
 		// 계산
 		double inch = number / 2.54;
+		double yard = number / 91.44;
+		double feet = number / 30.48;
+		double meter = number / 100.0;
 	%>
 	
 	<div class="container">
@@ -24,6 +27,21 @@
 		<div><%= number %>cm</div>
 		<hr>
 		
+		<div>
+			<%= inch %>in
+		</div>
+		
+		<div>
+			<%= yard %>yd
+		</div>
+		
+		<div>
+			<%= feet %>ft
+		</div>
+		
+		<div>
+			<%= meter %>m
+		</div>
 		
 	</div>
 	
