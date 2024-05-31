@@ -12,37 +12,39 @@
 <body>
 	<%	
 		// request parameter
-		int number = Integer.valueOf(request.getParameter("number"));
-		String[] lenghtArr = request.getParameterValues("lenght");
+		int lenght = Integer.valueOf(request.getParameter("lenght"));
+		String[] types = request.getParameterValues("type"); // 여러값 파라미터 한번에 받아오기
 		
 		// 계산
-		double inch = number / 2.54;
-		double yard = number / 91.44;
-		double feet = number / 30.48;
-		double meter = number / 100.0;
+		double inch = lenght / 2.54;
+		double yard = lenght / 91.44;
+		double feet = lenght / 30.48;
+		double meter = lenght / 100.0;
 	%>
 	
 	<div class="container">
 		<h1>길이 변환 결과</h1>
-		<div><%= number %>cm</div>
+		<h3><%= lenght %> cm</h3>
 		<hr>
 		
-		<div>
-			<%= inch %>in
-		</div>
-		
-		<div>
-			<%= yard %>yd
-		</div>
-		
-		<div>
-			<%= feet %>ft
-		</div>
-		
-		<div>
-			<%= meter %>m
-		</div>
-		
+		<h2>
+			<%
+				if (types != null) {
+					for (String type : types) { // ex) [inch, meter, feet]
+						if (type.equals("inch")) { // inch
+							// cm to inch
+							out.print(inch + " in<br>");
+						} else if (type.equals("yard")) { // yard
+							out.print(yard + " yd<br>");
+						} else if (type.equals("feet")) { // feet
+							out.print(feet + " ft<br>");
+						} else if (type.equals("meter")) { // meter
+							out.print(meter + " m<br>");
+						}
+					}
+				}
+			%>
+		</h2>
 	</div>
 	
 </body>
