@@ -10,15 +10,15 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
-<style>
-	header {height:80px}
-	nav {height:50px}
-	.contents {min-height:500px}
-	footer {height:30px}
-	
-	.nav-link {color:#fff;}
-	.nav-link:hover {color:#777;}
-</style>	
+	<style>
+		header {height:80px;}
+		nav {height:50px;}
+		.contents {min-height:500px;}
+		footer {height:30px;}
+		
+		.nav-link {color:#fff;}
+		.nav-link:hover {color:#777;}
+	</style>	
 </head>
 <body>
 	<%
@@ -69,12 +69,12 @@
 		
 		<nav class="bg-danger d-flex align-items-center">
 			<ul class="nav nav-fill w-100">
-				<li class="nav-item"><a href="#" clss="nav-link">전체</a></li>
-				<li class="nav-item"><a href="#" clss="nav-link">지상파</a></li>
-				<li class="nav-item"><a href="#" clss="nav-link">드라마</a></li>
-				<li class="nav-item"><a href="#" clss="nav-link">예능</a></li>
-				<li class="nav-item"><a href="#" clss="nav-link">영화</a></li>
-				<li class="nav-item"><a href="#" clss="nav-link">스포츠</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">전체</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">지상파</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">드라마</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">예능</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">영화</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">스포츠</a></li>
 			</ul>
 		</nav>
 		
@@ -104,7 +104,7 @@
 		</section>
 
 		<footer class="d-flex justify-content-center align-items-center">
-			<small>Copyright 2021. marondal All Rights Reserved.</small>
+			<small>Copyright © SK broadband IPTV 2024</small>
 		</footer>
 	</div>
 </body>
