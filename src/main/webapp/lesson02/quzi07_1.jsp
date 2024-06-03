@@ -43,25 +43,26 @@
 		    
 		    	// request parameter
 		    	String keyword = request.getParameter("keyword");
-		    	String[] starFilters = request.getParameterValues("starFilter");
 		    	
+		    	// 4점 이하 제외	 체크됨:"true" 체크안됨:null
+		    	String starFilter = request.getParameter("starFilter");
+		    	boolean exclude = starFilter != null; // 체크됨 => "true" 4점이하 제외
 		    	
 		    	for (Map<String, Object> item : list) {
-		    		
+		    		if (keyword.equals(item.get("menu"))) {
+		    			// skip 조건이 체크 되어 있고 스킵 되어야 할 때 skip(continue) - 메뉴가 같고, 체크할 때
+		    			if (exclude && (double)item.get("point") <= 4.0) { // 앞에(double)을 붙임으로 써 다운캐스팅을 한다.
+		    				continue; // 안 뿌리고 skip
+		    			}
 			%>
 			<tr>
-				<td>
-					<%
-						if (item.get("menu").equals("keyword")) {
-							
-						}
-					%>
-				</td>
+				<td><%= item.get("menu") %></td>
 				<td><%= item.get("name") %></td>
 				<td><%= item.get("point") %></td>
 			</tr>
 			
 			<%
+		    		}
 		    	}
 			%>
 		</tbody>
