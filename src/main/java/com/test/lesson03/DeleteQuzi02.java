@@ -10,31 +10,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.test.common.MysqlService;
 
-@WebServlet("/lesson03/quzi02_insert")
-public class InsertQuzi02 extends HttpServlet {
+@WebServlet("/lesson03/quzi02_delete")
+public class DeleteQuzi02 extends HttpServlet {
 	
 	@Override
-	public void doPost(HttpServletRequest request,
+	public void doGet (HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
 		
-		// response header 생략
-		
-		// request params
-		String name = request.getParameter("name");
-		String url = request.getParameter("url");
+		// request param
+		int id = Integer.valueOf(request.getParameter("id"));
 		
 		// db 연결
 		MysqlService ms = MysqlService.getInstance();
 		ms.connect();
 		
-		// insert 쿼리 수행
-		String insertQuery = "insert into `bookmark`"
-				+ "(`name`, `url`)"
-				+ "values"
-				+ "('" + name + "', '" + url + "')";
+		// delete query 수행
+		String deleteQuery = "delete from `bookmark` where `id` = " + id;
 		
 		try {
-			ms.update(insertQuery);
+			ms.update(deleteQuery);
 		} catch (SQLException e) {
 
 			e.printStackTrace();
@@ -43,7 +37,7 @@ public class InsertQuzi02 extends HttpServlet {
 		// db 연결 해제
 		ms.disconnect();
 		
-		// 목록 화면 이동: Redirect
+		// 목록 화면 이동 302 redirect
 		response.sendRedirect("/lesson03/quzi02.jsp");
 	}
 	

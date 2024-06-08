@@ -16,11 +16,11 @@
 		<form method="post" action="/lesson03/quzi02_insert">
 			<div>
 				<p class="font-weight-bold">사이트명:</p>
-				<input type="text" class="form-control col-3" name="siteName">
+				<input type="text" class="form-control col-3" name="name">
 			</div>
 			<div>
 				<p class="font-weight-bold">사이트 주소:</p>
-				<input type="text" class="form-control col-6" name="siteAddress">
+				<input type="text" class="form-control col-6" name="url">
 			</div>
 			
 			<input type="submit" class="btn btn-success mt-3" value="추가">
