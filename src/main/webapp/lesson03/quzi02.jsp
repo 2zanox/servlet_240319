@@ -22,29 +22,30 @@
 			 	+ "ORDER BY `id` DESC ";
 	ResultSet res = ms.select(query);
 %>
-	
-	<table class="table text-center">
-		<thead>
-			<tr>
-				<th>사이트</th>
-				<th>사이트 주소</th>
-			</tr>
-		</thead>
-		<tbody>
-			<%
-				while (res.next()) {
-			%>
-			<tr>
-				<td><%= res.getString("name") %></td>
-				<td><a href="<%= res.getString("url") %>"><%= res.getString("url") %></a></td>
-				<td><a href="/lesson03/quzi02_delete?id=<%= res.getString("id") %>">삭제</a></td>
-			</tr>
-			<%
-				}
-			%>
-		</tbody>
-	</table>
-	
+	<div class="container">
+		<table class="table text-center">
+			<thead>
+				<tr>
+					<th>사이트</th>
+					<th>사이트 주소</th>
+					<th>삭제</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+					while (res.next()) {
+				%>
+				<tr>
+					<td><%= res.getString("name") %></td>
+					<td><a href="<%= res.getString("url") %>"><%= res.getString("url") %></a></td>
+					<td><a href="/lesson03/quzi02_delete?id=<%= res.getInt("id") %>" class="btn btn-danger">삭제</a></td>
+				</tr>
+				<%
+					}
+				%>
+			</tbody>
+		</table>
+	</div>	
 <%
 	// DB 연결 해제
 	ms.disconnect();
